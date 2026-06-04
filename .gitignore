@@ -1,0 +1,4 @@
+outputs
+.DS_store
+.env
+__pycache__
