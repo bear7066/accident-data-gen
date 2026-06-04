@@ -6,6 +6,12 @@ TIME_PATTERN = (
     "and the final 1.5 seconds show the resulting state after the action. "
 )
 
+CONSTRAINTS = (
+    "Realistic human motion, realistic physics, single continuous shot,"
+    "no cuts, no zooms, no slow motion, no text overlay, no subtitles,"
+    "no watermark, no music, no gore, no graphic injury."
+)
+
 
 """dynamic variables"""
 # 2 elderly people, 2 child, 2 middle-aged, 2 young people 

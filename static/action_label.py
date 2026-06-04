@@ -109,7 +109,7 @@ ACTION_LABELS ={
     "collapse_stumble_loss_of_motor_control": {
         "category": "medical_collapse",
         "description": "person is walking or moving normally, then suddenly experiences a loss of motor coordination, stumbles aimlessly without an external trip/slip obstacle, and falls",
-    }
+    },
 
     # accident: 6
     "accident_door_collision": {
@@ -135,7 +135,7 @@ ACTION_LABELS ={
     "accident_step_off_edge": {
         "category": "accident",
         "description": "person steps past the edge of an elevated platform, curb, or ledge into empty space, losing footing and falling downward",
-    }
+    },
 
     
     # post fall 6: the action after falling 
