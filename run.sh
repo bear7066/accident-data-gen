@@ -2,6 +2,9 @@
 set -euo pipefail
 
 NUM_VIDEOS="${NUM_VIDEOS:-1}"
+LOG_FILE="${LOG_FILE:-output.log}"
+
+: > "$LOG_FILE"
 
 ACTION_LABELS=(
   fall_forward
@@ -55,9 +58,10 @@ ACTION_LABELS=(
 )
 
 for action_label in "${ACTION_LABELS[@]}"; do
+  echo "running action_label: $action_label" >> "$LOG_FILE"
   uv run src/generate.py \
     --num-videos "$NUM_VIDEOS" \
     --action-label "$action_label" \
     --video-json-output-dir "output/records" \
-    --video-output-dir "output/videos"
+    --video-output-dir "output/videos" >> "$LOG_FILE" 2>&1
 done

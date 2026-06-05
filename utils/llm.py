@@ -23,19 +23,23 @@ def llm_generate(prompt: str, output_path: Path) -> dict:
     payload = {
         "model": "openai/sora-2-pro",
         "prompt": prompt,
-        # "duration": 5,
+        # "duration": 4,
         "resolution": "720p",
         "aspect_ratio": "16:9",
         "generate_audio": True,
     }
 
-    job = requests.post(
+    response = requests.post(
         "https://openrouter.ai/api/v1/videos",
         headers=headers,
         json=payload,
         timeout=60,
-    ).json()
+    )
+    job = response.json()
     print("submit job:", job)
+
+    if "polling_url" not in job:
+        raise RuntimeError(job)
         
     polling_url = urljoin("https://openrouter.ai", job["polling_url"])
     while True:
