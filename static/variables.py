@@ -2,13 +2,13 @@
 # important frames appears in 1.5~3.5 seconds
 TIME_PATTERN = (
     "The action begins around 1.5 seconds in and completes by 3.5 seconds. "
-    "The first 1.5 seconds show the subject in their initial state," 
+    "The first 1.5 seconds show the subject in their initial state, " 
     "and the final 1.5 seconds show the resulting state after the action. "
 )
 
 CONSTRAINTS = (
-    "Realistic human motion, realistic physics, single continuous shot,"
-    "no cuts, no zooms, no slow motion, no text overlay, no subtitles,"
+    "Realistic human motion, realistic physics, single continuous shot, "
+    "no cuts, no zooms, no slow motion, no text overlay, no subtitles, "
     "no watermark, no music, no gore, no graphic injury."
 )
 
@@ -96,4 +96,13 @@ SCENES = {
         "a subway carriage in motion with a few standing passengers holding onto poles, sliding doors visible at the end", 
         "an empty subway carriage with hard plastic seats, metal handrails, route map above the windows"
     ]
+}
+
+
+SCENE_BY_ACTION = {
+    "fall_from_bed": ["Bedroom", "Medical"],
+    "fall_from_chair": ["Living room", "Medical", "Subway carriage"],
+    "fall_from_wheelchair": ["Medical", "Living room"],
+    "fall_down_stairs": ["Subway Station"],
+    "accident_step_off_edge": ["Subway Station"],
 }

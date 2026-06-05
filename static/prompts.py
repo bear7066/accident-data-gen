@@ -10,7 +10,9 @@ from variables import (
     PERSON_POSITION,
     BLOCK,
     SCENES,
+    SCENE_BY_ACTION,
 )
+
 
 def build_prompt(action_label: str, seed: int | None = None, duration: int = 5) -> str:
     prompt = ""
@@ -24,7 +26,8 @@ def build_prompt(action_label: str, seed: int | None = None, duration: int = 5) 
     camera_quality = rng.choice(CAMERA_QUALITY)
     person_position = rng.choice(PERSON_POSITION)
     block = rng.choice(BLOCK)
-    scene = rng.choice(list(SCENES.keys())) # pick up scence type
+    scene_pool = SCENE_BY_ACTION.get(action_label, list(SCENES.keys()))
+    scene = rng.choice(scene_pool) # pick up scence type
     scene_desc = rng.choice(SCENES[scene]) # access corresponded desc
    
 
