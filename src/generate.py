@@ -14,6 +14,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--action-label", required=True)
     parser.add_argument("--num-videos", type=int, default=1)
+    parser.add_argument("--start-index", type=int, default=0)
     parser.add_argument("--video-json-output-dir", type=Path, default=output_path)
     parser.add_argument("--video-output-dir", type=Path, default=output_path)
     # fixed -> parser.add_argument("--output",type=Path, default=Path("outputs/generation_records.json"))
@@ -21,17 +22,25 @@ def main() -> None:
     # fixed 5 seconds -> parser.add_argument("--duration", type=int, default=5) 
     args = parser.parse_args()
 
-    for i in range(args.num_videos):
+    for i in range(args.start_index, args.start_index + args.num_videos):
         print(f"{args.action_label}_{i}:", i)
         prompt = build_prompt(args.action_label)
         video_path = args.video_output_dir / f"{args.action_label}_{i}.mp4"
-        response = llm_generate(prompt, video_path)
+        try:
+            response = llm_generate(prompt, video_path)
+            error = None
+        except Exception as exc:
+            response = None
+            error = str(exc)
+            print("error:", error)
+
         record = {
             "index": i,
             "action_label": args.action_label,  
             "video_path": str(video_path),
             "prompt": prompt,
             "response": response,
+            "error": error,
           }
 
         json_path = args.video_json_output_dir / f"{args.action_label}_{i}.json"

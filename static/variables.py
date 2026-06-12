@@ -19,7 +19,7 @@ PEOPLES = [
     "an elderly man in his 70s wearing a cardigan",
     "an elderly woman in her 70s with grey hair",
     "a school-aged boy in a hoodie and sneakers",
-    "a child wearing a birthday party hat blowing a whistle",
+    "a child",
     "a middle-aged man in casual clothes",
     "a middle-aged woman in a sweater and jeans",
     "a young adult man in a t-shirt and jeans",
