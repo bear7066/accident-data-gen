@@ -127,6 +127,9 @@ ACTION_POSITION = {
     "hn_play_with_child_floor": [
         "the adult and child are centered or near-center, both clearly visible on the floor play area",
     ],
+    "hn_near_fall_no_fall": [
+        "the person is centered or near-center, with full body, feet, and recovery steps clearly visible before, during, and after the near-fall moment",
+    ],
 }
 
 
@@ -191,6 +194,9 @@ ACTION_VISIBILITY = {
     "hn_play_with_child_floor": [
         "no occlusion; the adult, child, and floor play interaction are visible throughout",
     ],
+    "hn_near_fall_no_fall": [
+        "no occlusion; the person's full body, both feet, arms, and the complete balance recovery are visible throughout",
+    ],
 }
 
 
@@ -245,6 +251,9 @@ EXTRA_CONSTRAINTS_BY_ACTION = {
     ),
     "hn_situp_from_floor": (
         "This label means sit-up only: the person must start lying face-up on their back, then intentionally curl the torso upward into a seated position. Do not show pushups, planks, face-down exercise, crawling, rolling, or any prone position."
+    ),
+    "hn_near_fall_no_fall": (
+        "This label is a near-fall hard negative: show a brief loss of balance, slip, trip, or sideways sway, followed by an immediate visible recovery. The person must stay upright or return upright without any body part other than feet touching the floor. Do not show a completed fall, sitting on the floor, lying on the floor, crawling, collapse, injury behavior, or post-fall state. The final frame must clearly show the person standing or walking normally."
     ),
 }
 
@@ -311,6 +320,12 @@ SCENES = {
         "a playroom-like floor area with toys spread out, a small child visible, and an adult interacting calmly",
         "a bedroom floor with a small child and toys visible, with an adult sitting or kneeling nearby",
     ],
+    "Near-fall recovery area": [
+        "a hallway or corridor with open floor space where the person can visibly take recovery steps without hitting objects",
+        "a living room walkway with clear floor space, furniture at the edges, and enough room for a brief stumble and recovery",
+        "a subway platform away from the platform edge, with the yellow safety strip visible but the person safely far from it",
+        "a hospital corridor with handrails along the wall and clear floor space for a brief balance recovery",
+    ],
     "Subway Station": [
         "a subway platform with yellow tactile strips along the edge, a train arriving in the background, overhead signage",
         "an empty subway platform with tiled walls, advertisement panels, benches along the wall",
@@ -346,6 +361,7 @@ SCENE_BY_ACTION = {
     "hn_stretching_floor": ["Controlled floor activity"],
     "hn_situp_from_floor": ["Controlled floor activity"],
     "hn_play_with_child_floor": ["Child play floor"],
+    "hn_near_fall_no_fall": ["Near-fall recovery area"],
     # Disabled with `accident_step_off_edge` in action_label.py.
     # "accident_step_off_edge": ["Subway Station"],
 }

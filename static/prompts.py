@@ -67,7 +67,7 @@ def build_prompt(action_label: str, seed: int | None = None, duration: int = 5) 
     extra_constraints = []
     if action_label in EXTRA_CONSTRAINTS_BY_ACTION:
         extra_constraints.append(EXTRA_CONSTRAINTS_BY_ACTION[action_label])
-    if category == "hard_negative":
+    if category == "hard_negative" and action_label != "hn_near_fall_no_fall":
         extra_constraints.append(HARD_NEGATIVE_CONSTRAINTS)
     label_constraints = " ".join(extra_constraints)
     label_constraints_line = (

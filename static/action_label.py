@@ -35,10 +35,10 @@ ACTION_LABELS ={
 
 
     # fall by some objects: 10    
-    "fall_slip_wet_floor": {
-        "category": "fall_cause",
-        "description": "person clearly steps onto a visible wet, shiny, or slippery patch on the floor; one or both feet slide out, the body loses traction, and the person falls to the floor",
-    },
+    # "fall_slip_wet_floor": {
+    #     "category": "fall_cause",
+    #     "description": "person clearly steps onto a visible wet, shiny, or slippery patch on the floor; one or both feet slide out, the body loses traction, and the person falls to the floor",
+    # },
     # Disabled after QC: cues are often not visible enough to separate from generic falls.
     # "fall_trip_obstacle": {
     #     "category": "fall_cause",
@@ -64,14 +64,14 @@ ACTION_LABELS ={
         "category": "fall_cause",
         "description": "person starts seated in a clearly visible wheelchair; the wheelchair stays visible as the person slides, tips, or falls out of it and lands on the floor next to the wheelchair",
     },
-    "fall_down_stairs": {
-        "category": "fall_cause",
-        "description": "person starts on the stair steps, loses footing while ascending or descending, and visibly tumbles down multiple steps rather than merely falling on a flat landing or platform",
-    },
-    "fall_while_carrying_object": {
-        "category": "fall_cause",
-        "description": "person walks while carrying a clearly visible object such as a box, bag, tray, or laundry basket; the object stays visible as the person loses stability, drops or clutches it, and falls",
-    },
+    # "fall_down_stairs": {
+    #     "category": "fall_cause",
+    #     "description": "person starts on the stair steps, loses footing while ascending or descending, and visibly tumbles down multiple steps rather than merely falling on a flat landing or platform",
+    # },
+    # "fall_while_carrying_object": {
+    #     "category": "fall_cause",
+    #     "description": "person walks while carrying a clearly visible object such as a box, bag, tray, or laundry basket; the object stays visible as the person loses stability, drops or clutches it, and falls",
+    # },
     # Disabled after QC: turning cue is not consistently clear.
     # "fall_while_turning": {
     #     "category": "fall_cause",
@@ -210,5 +210,9 @@ ACTION_LABELS ={
     # "hn_play_with_child_floor": {
     #     "category": "hard_negative",
     #     "description": "an adult and a clearly visible child sit or kneel on the floor together, playing calmly with toys or gestures in a relaxed controlled way",
+    # },
+    # "hn_near_fall_no_fall": {
+    #     "category": "hard_negative",
+    #     "description": "person briefly slips, trips, missteps, or sways as if about to fall, but quickly regains balance and remains standing or walking; the person never touches the floor, never collapses, and never enters a post-fall state",
     # },
 }
